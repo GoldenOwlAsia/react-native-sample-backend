@@ -16,7 +16,11 @@
 require 'rails_helper'
 
 RSpec.describe QRCode, type: :model do
-  let(:qr_code) { build(:qr_code) }
+  subject(:qr_code) { build(:qr_code) }
 
   it { should be_valid }
+
+  describe 'validations' do
+    it { should validate_presence_of(:url)}
+  end
 end

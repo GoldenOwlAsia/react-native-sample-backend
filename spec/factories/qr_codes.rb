@@ -15,6 +15,6 @@
 
 FactoryBot.define do
   factory :qr_code do
-    
+    url { Faker::Internet.url }
   end
 end
