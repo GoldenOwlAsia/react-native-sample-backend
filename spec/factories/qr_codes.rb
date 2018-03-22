@@ -15,6 +15,7 @@
 
 FactoryBot.define do
   factory :qr_code do
+    utm_source { rand(1000) }
     url { Faker::Internet.url }
   end
 end
