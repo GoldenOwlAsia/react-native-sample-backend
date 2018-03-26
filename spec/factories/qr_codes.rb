@@ -10,7 +10,7 @@
 #  utm_campaign :string
 #  utm_term     :string
 #  utm_content  :string
-#  url          :string
+#  code         :string
 #
 
 FactoryBot.define do
