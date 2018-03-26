@@ -10,7 +10,7 @@ class AddFieldsToQRCodes < ActiveRecord::Migration[5.1]
     add_index :qr_codes, :utm_term
     add_column :qr_codes, :utm_content, :string
     add_index :qr_codes, :utm_content
-    add_column :qr_codes, :url, :string
-    add_index :qr_codes, :url
+    add_column :qr_codes, :code, :string
+    add_index :qr_codes, :code
   end
 end

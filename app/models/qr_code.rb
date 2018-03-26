@@ -15,5 +15,5 @@
 
 class QRCode < ApplicationRecord
   #TODO - this should get pulled up by the controller and used to determine tracking data and a redirect location
-  validates :url, presence: true
+  validates :code, presence: true
 end
