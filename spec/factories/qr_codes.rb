@@ -13,12 +13,10 @@
 #  code         :string
 #
 
-class QRCode < ApplicationRecord
-  #TODO - this should get pulled up by the controller and used to determine tracking data and a redirect location
-  validates :code, presence: true
-  validates :target_url, presence: true
-
-  def redirect_origin_url
-    Rails.application.routes.url_helpers.send(:forward_path, self.code)
+FactoryBot.define do
+  factory :qr_code do
+    utm_source { rand(1000) }
+    code { Faker::Code.asin }
+    target_url { "http://example.com" }
   end
 end

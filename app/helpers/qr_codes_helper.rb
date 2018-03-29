@@ -1,2 +1,2 @@
-module QrCodesHelper
+module QRCodesHelper
 end
