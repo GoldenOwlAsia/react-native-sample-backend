@@ -17,5 +17,6 @@ FactoryBot.define do
   factory :qr_code do
     utm_source { rand(1000) }
     code { Faker::Code.asin }
+    target_url { "http://example.com" }
   end
 end

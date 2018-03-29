@@ -16,4 +16,9 @@
 class QRCode < ApplicationRecord
   #TODO - this should get pulled up by the controller and used to determine tracking data and a redirect location
   validates :code, presence: true
+  validates :target_url, presence: true
+
+  def redirect_origin_url
+    Rails.application.routes.url_helpers.send(:forward_path, self.code)
+  end
 end

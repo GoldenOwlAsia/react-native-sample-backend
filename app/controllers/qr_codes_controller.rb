@@ -6,7 +6,7 @@ class QRCodesController < ApplicationController
     # it will then redirect to the product listing (for now let's say it's a url hardcoded into the qr code model)
     qr_code = QRCode.find_by_code! params[:code]
 
-    redirect_to "http://google.com?q=#{qr_code.utm_source}"
+    redirect_to qr_code.target_url
   end
 
 end

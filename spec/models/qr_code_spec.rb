@@ -21,6 +21,6 @@ RSpec.describe QRCode, type: :model do
   it { should be_valid }
 
   describe 'validations' do
-    it { should validate_presence_of(:url)}
+    it { should validate_presence_of(:code)}
   end
 end

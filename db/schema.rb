@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321185618) do
+ActiveRecord::Schema.define(version: 20180329061321) do
 
   create_table "qr_codes", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20180321185618) do
     t.string "utm_term"
     t.string "utm_content"
     t.string "code"
+    t.string "target_url"
     t.index ["code"], name: "index_qr_codes_on_code"
     t.index ["utm_campaign"], name: "index_qr_codes_on_utm_campaign"
     t.index ["utm_content"], name: "index_qr_codes_on_utm_content"
