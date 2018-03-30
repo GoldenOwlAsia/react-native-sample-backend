@@ -5,7 +5,7 @@ p
   = @shop.name
 p
   strong Landlord:
-  = @shop.landlord
+  = link_to @shop.landlord.name, landlord_path(@shop.landlord)
 
 => link_to 'Edit', edit_shop_path(@shop)
 '|

@@ -32,7 +32,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'slim-rails'
-gem 'formtastic', '~> 3.0'
+gem "bootstrap_form", git: "https://github.com/bootstrap-ruby/bootstrap_form.git", branch: "master"
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.0.0'
 
 
 group :development, :test do

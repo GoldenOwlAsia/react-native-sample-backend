@@ -25,6 +25,6 @@ end
 products = Product.all.to_a
 
 100.times do
-  FactoryBot.create :qr_code, product: products.sample, landlord: landlords.sample
+  FactoryBot.create :qr_code, product: products.sample, shop: shops.sample
 end
 

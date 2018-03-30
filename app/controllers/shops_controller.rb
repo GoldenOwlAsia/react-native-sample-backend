@@ -5,6 +5,7 @@ class ShopsController < ApplicationController
   # GET /shops.json
   def index
     @shops = Shop.all
+    @shops = @shops.where(landlord_id: params[:landlord_id]) if params[:landlord_id].present?
   end
 
   # GET /shops/1
@@ -15,6 +16,7 @@ class ShopsController < ApplicationController
   # GET /shops/new
   def new
     @shop = Shop.new
+    @landlords = Landlord.all.pluck(:name, :id)
   end
 
   # GET /shops/1/edit
@@ -25,6 +27,7 @@ class ShopsController < ApplicationController
   # POST /shops.json
   def create
     @shop = Shop.new(shop_params)
+    @landlords = Landlord.all.pluck(:name, :id)
 
     respond_to do |format|
       if @shop.save

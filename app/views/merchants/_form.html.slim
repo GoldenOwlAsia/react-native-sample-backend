@@ -1,6 +1,4 @@
-= semantic_form_for @merchant do |f|
-  = f.inputs do
-    = f.input :name
+= bootstrap_form_for @merchant do |f|
+  = f.text_field :name
 
-  = f.actions do
-    = f.action :submit, as: :input
+  = f.submit "Submit", class: 'btn btn-default'
