@@ -8,4 +8,23 @@
 require 'faker'
 require 'factory_bot'
 
-FactoryBot.create_list :qr_code, rand(10) + 1
+
+
+landlords = FactoryBot.create_list :landlord, rand(10) + 1
+merchants = FactoryBot.create_list :merchant, rand(10) + 1
+
+20.times do
+  FactoryBot.create :shop, landlord: landlords.sample
+end
+shops = Shop.all.to_a
+
+
+50.times do
+  FactoryBot.create :product, merchant: merchants.sample
+end
+products = Product.all.to_a
+
+100.times do
+  FactoryBot.create :qr_code, product: products.sample, landlord: landlords.sample
+end
+
