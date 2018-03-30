@@ -2,10 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "shops/edit", type: :view do
   before(:each) do
-    @shop = assign(:shop, Shop.create!(
-      :name => "MyString",
-      :landlord => nil
-    ))
+    @shop = assign(:shop, create(:shop))
   end
 
   it "renders the edit shop form" do
@@ -15,7 +12,7 @@ RSpec.describe "shops/edit", type: :view do
 
       assert_select "input[name=?]", "shop[name]"
 
-      assert_select "input[name=?]", "shop[landlord_id]"
+      assert_select "select[name=?]", "shop[landlord_id]"
     end
   end
 end

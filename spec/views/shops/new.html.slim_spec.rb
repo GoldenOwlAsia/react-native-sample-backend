@@ -2,10 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "shops/new", type: :view do
   before(:each) do
-    assign(:shop, Shop.new(
-      :name => "MyString",
-      :landlord => nil
-    ))
+    assign(:shop, build(:shop))
   end
 
   it "renders new shop form" do
@@ -15,7 +12,7 @@ RSpec.describe "shops/new", type: :view do
 
       assert_select "input[name=?]", "shop[name]"
 
-      assert_select "input[name=?]", "shop[landlord_id]"
+      assert_select "select[name=?]", "shop[landlord_id]"
     end
   end
 end

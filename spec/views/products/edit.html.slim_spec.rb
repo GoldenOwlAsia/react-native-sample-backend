@@ -2,10 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "products/edit", type: :view do
   before(:each) do
-    @product = assign(:product, Product.create!(
-      :name => "MyString",
-      :merchant => nil
-    ))
+    @product = assign(:product, create(:product))
   end
 
   it "renders the edit product form" do
@@ -15,7 +12,7 @@ RSpec.describe "products/edit", type: :view do
 
       assert_select "input[name=?]", "product[name]"
 
-      assert_select "input[name=?]", "product[merchant_id]"
+      assert_select "select[name=?]", "product[merchant_id]"
     end
   end
 end
