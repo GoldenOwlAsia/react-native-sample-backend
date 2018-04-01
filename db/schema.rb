@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 20180330110838) do
     t.datetime "updated_at", null: false
     t.index ["merchant_id"], name: "index_products_on_merchant_id"
     t.index ["name"], name: "index_products_on_name"
-    t.index [nil], name: "index_products_on_merchant"
   end
 
   create_table "qr_codes", force: :cascade do |t|

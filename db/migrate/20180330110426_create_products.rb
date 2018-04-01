@@ -7,6 +7,6 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.timestamps
     end
     add_index :products, :name
-    add_index :products, :merchant
+    #add_index :products, :merchant_id
   end
 end
