@@ -62,6 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'graphql', '1.7.4'
 
-gem 'graphiql-rails'
+gem 'graphiql-rails', group: :development
 gem 'factory_bot_rails'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
