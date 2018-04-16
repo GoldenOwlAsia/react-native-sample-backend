@@ -42,8 +42,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'rspec-rails', '~> 3.7'
-  gem 'factory_bot_rails'
-  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :test do
@@ -65,3 +63,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'graphql', '1.7.4'
 
 gem 'graphiql-rails', group: :development
+gem 'factory_bot_rails'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
