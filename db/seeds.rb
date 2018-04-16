@@ -8,6 +8,7 @@
 require 'faker'
 require 'factory_bot'
 
+puts "Seeding..."
 
 
 landlords = FactoryBot.create_list :landlord, rand(10) + 1
@@ -28,3 +29,4 @@ products = Product.all.to_a
   FactoryBot.create :qr_code, product: products.sample, shop: shops.sample
 end
 
+puts "done."
