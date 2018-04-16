@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329061321) do
+ActiveRecord::Schema.define(version: 20180330110838) do
+
+  create_table "landlords", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_landlords_on_name"
+  end
+
+  create_table "merchants", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_merchants_on_name"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.integer "merchant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["merchant_id"], name: "index_products_on_merchant_id"
+    t.index ["name"], name: "index_products_on_name"
+  end
 
   create_table "qr_codes", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -22,12 +45,25 @@ ActiveRecord::Schema.define(version: 20180329061321) do
     t.string "utm_content"
     t.string "code"
     t.string "target_url"
+    t.integer "product_id"
+    t.integer "shop_id"
     t.index ["code"], name: "index_qr_codes_on_code"
+    t.index ["product_id"], name: "index_qr_codes_on_product_id"
+    t.index ["shop_id"], name: "index_qr_codes_on_shop_id"
     t.index ["utm_campaign"], name: "index_qr_codes_on_utm_campaign"
     t.index ["utm_content"], name: "index_qr_codes_on_utm_content"
     t.index ["utm_medium"], name: "index_qr_codes_on_utm_medium"
     t.index ["utm_source"], name: "index_qr_codes_on_utm_source"
     t.index ["utm_term"], name: "index_qr_codes_on_utm_term"
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string "name"
+    t.integer "landlord_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["landlord_id"], name: "index_shops_on_landlord_id"
+    t.index ["name"], name: "index_shops_on_name"
   end
 
 end
