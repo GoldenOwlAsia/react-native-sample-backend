@@ -85,6 +85,7 @@ GEM
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
     ffi (1.9.23)
+    geocoder (1.4.7)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     graphiql-rails (1.4.10)
@@ -228,6 +229,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   factory_bot_rails
   faker!
+  geocoder
   graphiql-rails
   graphql (= 1.7.4)
   jbuilder (~> 2.5)
