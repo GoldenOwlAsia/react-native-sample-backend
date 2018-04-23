@@ -13,7 +13,7 @@
 #  code         :string
 #  target_url   :string
 #  product_id   :integer
-#  landlord_id  :integer
+#  shop_id      :integer
 #
 
 require 'rails_helper'

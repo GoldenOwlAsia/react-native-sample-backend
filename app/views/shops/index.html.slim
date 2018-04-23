@@ -10,7 +10,7 @@ table.table.table-striped
   tbody
     - @shops.each do |shop|
       tr
-        td = shop.name
+        td = link_to shop.name, shop_path(shop)
         td = link_to shop.landlord.name, landlord_path(shop.landlord)
         td
           = link_to 'Edit', edit_shop_path(shop), class: 'btn btn-primary'
